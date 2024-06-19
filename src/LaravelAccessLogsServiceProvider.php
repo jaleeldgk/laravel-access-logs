@@ -3,6 +3,8 @@
 namespace Jaleeldgk\LaravelAccessLogs;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
+use Jaleeldgk\LaravelAccessLogs\Middlewares\AccessLogMiddleware;
 
 class LaravelAccessLogsServiceProvider extends ServiceProvider
 {

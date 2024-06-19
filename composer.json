@@ -25,5 +25,7 @@
                 "Jaleeldgk\\LaravelAccessLogs\\LaravelAccessLogsServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
