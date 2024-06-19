@@ -20,6 +20,9 @@ class LaravelAccessLogsServiceProvider extends ServiceProvider
 
         // Load migrations
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        // Register middleware
+        $router = $this->app->make(Router::class);
+        $router->pushMiddlewareToGroup('web', AccessLogMiddleware::class);
     }
 
     /**

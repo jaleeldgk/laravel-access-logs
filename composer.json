@@ -1,6 +1,6 @@
 {
     "name": "jaleeldgk/laravel-access-logs",
-    "description": "A Laravel package for logging user activities and errors.",
+    "description": "A Laravel package for logging user requests, best way to log all requests for debugging purpose.",
     "type": "library",
     "license": "MIT",
     "authors": [
