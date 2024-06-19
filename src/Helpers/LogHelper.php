@@ -3,6 +3,7 @@
 namespace Jaleeldgk\LaravelAccessLogs\Helpers;
 
 use Jaleeldgk\LaravelAccessLogs\Models\AccessLog;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 class LogHelper
@@ -17,6 +18,7 @@ class LogHelper
     {
         // Get request data
         $request = request();
+        $sessionId = $request->hasSession() ? $request->session()->getId() : null;
 
         // Merge provided data with default values from the request
         $data = array_merge([
@@ -28,10 +30,11 @@ class LogHelper
             'ip' => config('laravel-access-logs.log_ip') ? $request->ip() : null,
             'user_agent' => config('laravel-access-logs.log_user_agent') ? $request->header('User-Agent') : null,
             'response_status' => null,
-            'session_id' => $request->getSession() ? session()->getId() : null,
+            'session_id' => $sessionId,
             'error_message' => null,
             'error_trace' => null,
             'feedback' => null,
+            'content' => $request->getContent(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ], $data);
