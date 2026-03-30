@@ -1,5 +1,15 @@
 /vendor
 /node_modules
-/.idea
-/.vscode
+composer.phar
+composer.lock
+.phpunit.result.cache
 .DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+.env
+.env.testing
+phpunit.xml
+coverage/
